@@ -30,12 +30,12 @@ html {
   margin: 0;
 }
 
-.menu-container {
+.container--fluid {
   width: 95%;
   margin: 0 auto;
 }
 @media ( min-width: 768px ) {
-    .menu-container{
+    .container--fluid{
         width: 80%;
     }
 }

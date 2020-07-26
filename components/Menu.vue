@@ -1,5 +1,5 @@
 <template>
-    <nav class="menu menu-container" :style="style">
+    <nav class="menu container--fluid" :style="style">
         <slot name="logo"></slot>
     </nav>
 </template>
