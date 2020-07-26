@@ -1,8 +1,8 @@
 <template>
     <div>
-      <Menu :bg-color="menu.bgColor">
+      <Menu v-bind="menu">
        <template slot="logo">
-          <Logo :url="logo.url" :position="logo.position"/>
+          <Logo v-bind="logo"/>
        </template>
       </Menu>
     </div>
@@ -17,7 +17,7 @@ export default {
       },
       logo: {
           url:'/site-logo.png',
-          position: 'left',
+          position: 'center',
       }
     };
   },
