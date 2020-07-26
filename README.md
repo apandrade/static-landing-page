@@ -1,4 +1,4 @@
-# static-landing-page
+# Nuxt.js static landing page generator
 
 ## Build Setup
 
