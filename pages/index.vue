@@ -3,8 +3,9 @@
       <Menu v-bind="menu">
        <template slot="logo">
           <Logo v-bind="logo"/>
-       </template>
+       </template>      
       </Menu>
+      <Hero v-bind="hero"/>
     </div>
 </template>
 
@@ -13,11 +14,18 @@ export default {
   data() {
     return {
       menu: {
-          bgColor: "",
+          bgColor: '',
       },
       logo: {
           url:'/site-logo.png',
           position: 'center',
+      },
+      hero: {
+        title: 'Hero Title',
+        subtitle: 'Hero Subtitle',
+        link: '/',
+        linkText: 'Click Here',
+        layerTextAlign: 'center'
       }
     };
   },
