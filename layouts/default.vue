@@ -29,4 +29,14 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+.menu-container {
+  width: 95%;
+  margin: 0 auto;
+}
+@media ( min-width: 768px ) {
+    .menu-container{
+        width: 80%;
+    }
+}
 </style>

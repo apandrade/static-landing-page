@@ -1,5 +1,5 @@
 <template>
-    <nav class="menu" :style="style">
+    <nav class="menu menu-container" :style="style">
         <slot name="logo"></slot>
     </nav>
 </template>
@@ -21,13 +21,6 @@ export default {
 <style>
 .menu {
     position: relative;
-    width: 95%;
     height: 100px;
-    margin: 0 auto;
-}
-@media ( min-width: 768px ) {
-    .menu{
-        width: 80%;
-    }
 }
 </style>
