@@ -5,7 +5,9 @@
           <Logo v-bind="logo"/>
        </template>      
       </Menu>
-      <Hero v-bind="hero"/>
+      <Hero v-bind="hero">
+        <HeroLayer v-bind="heroLayer"/>
+      </Hero>
     </div>
 </template>
 
@@ -18,14 +20,24 @@ export default {
       },
       logo: {
           url:'/site-logo.png',
-          position: 'center',
+          position: 'right',
       },
-      hero: {
+      hero: {        
+        hideLayerText: false,
+        size: 'half',
+        bgImage: '/bg-hero.png',
+        bgColor: 'green',
+      },
+      heroLayer: {
         title: 'Hero Title',
         subtitle: 'Hero Subtitle',
         link: '/',
         linkText: 'Click Here',
-        layerTextAlign: 'center'
+        layerTextAlign: 'center',
+        layerTextValign: 'bottom',
+        layerAlign: 'center',
+        layerBgColor: 'rgba(0, 0, 0, 0.5)',
+        fontFamily: 'Advent Pro',
       }
     };
   },

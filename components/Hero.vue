@@ -1,51 +1,48 @@
 <template>
-    <div class="hero" :style="style">
-        <div class="container--fluid">
-            <div class="hero__layer hero__layer--center" :class="'hero__layer--text-' + heroLayerTextAlign">
-                <h1>{{title}}</h1>
-                <h2 v-if="hasSubtitle">{{subtitle}}</h2>
-                <a :href="link">{{linkText}}</a>
-            </div>
+    <div class="hero" :class="'hero--' + heroSize" :style='style'>
+        <div class="container--hero container--fluid">
+            <slot></slot>
         </div>
     </div>
 </template>
 <script>
 export default {
-    props: {
-        title: {
+    props: {        
+        size: {
             type: String,
-            required: true,
+            default: 'full'
         },
-        subtitle: {
+        bgColor: {
+            type: String,
+            default: 'red',
+        },
+        bgImage: {
             type: String,
         },
-        link: {
+        bgSize: {
             type: String,
-            required: true,
+            default: 'cover',
         },
-        linkText: {
-            type: String,
-            required: true,
-        },
-        layerTextAlign: {
-            type: String,
-            default: 'left'
-        }
-
     },
     data() {
        return {
-            heroTitle: this.title,
-            heroSubtitle: this.subtitle,
-            heroLink: this.link,
-            heroLinkText: this.linkText,
-            heroLayerTextAlign: this.layerTextAlign,
+            heroSize: this.size,
+            heroBgColor: this.hasBgImage ? 'transparent' : this.bgColor,
+            heroBgImage: this.bgImage,
+            heroBgSize: this.bgSize,
        }
     },
     computed: {
-        hasSubtitle() {
-            return !!this.heroSubtitle;
-        }
+        hasBgImage() {
+            return !!this.bgImage
+        },
+        style() {
+            let bgImageStyles = '';
+            if(this.hasBgImage)
+                bgImageStyles = `background-image: url('${this.heroBgImage}');background-size: ${this.heroBgSize};`;
+
+            return `background-color: ${this.heroBgColor};${bgImageStyles}`;
+        },
     }
 }
 </script>
@@ -53,44 +50,19 @@ export default {
 .hero {
     position: absolute;
     width: 100%;
-    background-color:rgb(202, 13, 13);
+}
+
+.hero--half {
+    height: 50vh;
+}
+
+.hero--full {
     height: calc( 100vh - 100px);/*100px represents top menu height */
 }
 
-.hero__layer {
-    position: absolute;
-    height: 300px;
-    width: 500px;
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
+.container--hero {
+    position: relative;
+    height: 100%;
 }
 
-.hero__layer--left {
-    left: 0;
-}
-
-.hero__layer--right {
-    right: 0;
-}
-
-.hero__layer--center {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.hero__layer--text-left {
-    text-align: left;
-}
-
-.hero__layer--text-right {
-    text-align: right;
-}
-
-.hero__layer--text-center {
-    text-align: center;
-}
 </style>
