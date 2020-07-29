@@ -4,7 +4,7 @@
                                                                                     ' hero__layer--text-' + heroLayerTextAlign">
         <h1>{{title}}</h1>
         <h2 v-if="hasSubtitle">{{subtitle}}</h2>
-        <a :href="link">{{linkText}}</a>    
+        <a aria-label="call-to-action" :href="link">{{linkText}}</a>    
     </div>
 </template>
 <script>
