@@ -1,7 +1,7 @@
 <template>
   <div class="logo" :class="'logo--'+position">
     <a href="/" :style="style">
-      <img v-if="hasImage" :src="logoImage"/>
+      <img v-if="hasImage" alt="site logo" :src="logoImage"/>
       <span v-if="hasText">{{text}}</span>
     </a>
   </div>
