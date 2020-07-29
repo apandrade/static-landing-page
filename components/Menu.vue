@@ -23,4 +23,15 @@ export default {
     position: relative;
     height: 100px;
 }
+nav.container--fluid {
+    width: 100%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+@media ( min-width: 768px ) {
+    nav.container--fluid{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
 </style>

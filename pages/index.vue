@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       menu: {
-          bgColor: '',
+          bgColor: '#000',
       },
       logo: {
           url:'https://via.placeholder.com/250x100',
