@@ -56,7 +56,7 @@ export default {
   margin: 0;
   padding: 0;
   animation: appear 1s;
-  width: 150px;
+  width: 250px;
 }
 
 .logo a {

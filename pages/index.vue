@@ -19,8 +19,8 @@ export default {
           bgColor: '',
       },
       logo: {
-          url:'/site-logo.png',
-          position: 'right',
+          url:'https://via.placeholder.com/250x100',
+          position: 'center',
       },
       hero: {        
         hideLayerText: false,
