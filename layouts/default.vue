@@ -21,6 +21,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: transparent;
+  scroll-behavior: smooth;
 }
 
 *,
