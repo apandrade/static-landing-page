@@ -1,5 +1,5 @@
 <template>
-    <nav class="menu container--fluid" :style="style">
+    <nav class="menu" :class="'menu--' + menuPosition" :style="style">
         <slot name="logo"></slot>
     </nav>
 </template>
@@ -9,29 +9,52 @@ export default {
         bgColor: {
             type: String,
             default: 'transparent',
+        },
+        position: {
+            type: String,
+            default: 'default', 
+        },
+        height: {
+            type: String,
+            default: '100px', 
+        },
+        borderBottom: {
+            type: String,
+            default: 'none', 
         }
     },
     computed: {
         style() {
-            return `background-color: ${this.bgColor}`;
+            return {
+                backgroundColor: this.menuBgColor,
+                height: this.height,
+                borderBottom: this.menuBorderBottom,
+            };
+        }
+    },
+    data() {
+        return {
+           menuBgColor: this.bgColor,
+           menuPosition: this.position,
+           menuHeight: this.height,
+           menuBorderBottom: this.borderBottom,
         }
     }
 }
 </script>
 <style>
 .menu {
+    z-index: 999;
+}
+.menu--top {
     position: relative;
-    height: 100px;
 }
-nav.container--fluid {
-    width: 100%;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+
+.menu--fixed {
+    position: fixed;
 }
-@media ( min-width: 768px ) {
-    nav.container--fluid{
-        padding-left: 10%;
-        padding-right: 10%;
-    }
+
+.menu--default {
+    position: absolute;
 }
 </style>
