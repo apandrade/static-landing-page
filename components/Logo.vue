@@ -1,8 +1,8 @@
 <template>
-  <div class="logo" :class="'logo--'+position">
-    <a href="/" :style="style">
+  <div class="logo" :class="'logo--'+ logoPosition" :style="style">
+    <a href="/" >
       <img v-if="hasImage" alt="site logo" :src="logoImage"/>
-      <span v-if="hasText">{{text}}</span>
+      <span v-if="showText">{{text}}</span>
     </a>
   </div>
 </template>
@@ -15,35 +15,89 @@ export default {
     },
     text: {
       type: String,
+      default: 'Site Logo'
     },
     fontFamily: {
       type: String,
+      default: 'Arial, Helvetica, sans-serif',
+    },
+    fontSize: {
+      type: String,
+      default: '25px',
+    },
+    lineHeight: {
+      type: String,
+      default: '30px',
     },
     fontColor:{
       type: String,
+      default: '#000',
     },
     position:{
       type: String,
       default: 'left',
     },
+    width:{
+      type: String,
+      default: '250px',
+    },
+    height:{
+      type: String,
+      default: '100%',
+    },
+    marginLeft:{
+      type: String,
+      default: '50px',
+    },
+    marginRight:{
+      type: String,
+      default: '50px',
+    },
   },
   data() {
     return {
       logoImage: this.url,
-      logoText: this.text || 'SiteLogo',
-      logoFont: this.fontFamily || 'Arial, Helvetica, sans-serif',
-      logoFontColor: this.fontColor || '#F5A506',
+      logoText: this.text,
+      logoFont: this.fontFamily,
+      logoFontColor: this.fontColor,
+      logoLineHeight: this.lineHeight,
+      logoFontSize: this.fontSize,
+      logoWidth: this.width,
+      logoHeight: this.height,
+      logoPosition: this.position,
+      logoMarginLeft: this.marginLeft,
+      logoMarginRight: this.marginRight,
     }
+  },
+  methods: {
+    textStyle() {
+      return {
+        fontFamily: this.logoFont,
+        color: this.logoFontColor,
+        fontSize: this.logoFontSize,
+        lineHeight: this.lineHeight,
+        marginLeft: this.logoMarginLeft,
+        marginRight: this.marginRight,
+      }
+    },
+    imageStyle() {
+      return {
+        width: this.logoWidth,
+        height: this.logoHeight,
+        marginLeft: this.logoMarginLeft,
+        marginRight: this.marginRight,
+      }
+    },
   },
   computed: {
     hasImage() {
       return !!this.logoImage;
     },
-    hasText() {
-      return !!this.logoText;
+    showText() {
+      return !this.hasImage;
     },
     style() {
-      return `font-family: ${this.logoFont}; color: ${this.logoFontColor};`;
+      return this.showText ? this.textStyle() : this.imageStyle();
     }
   }
 }
@@ -52,11 +106,13 @@ export default {
 <style>
 .logo {
   position: absolute;
-  height: 100%;
   margin: 0;
   padding: 0;
   animation: appear 1s;
-  width: 250px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .logo a {
