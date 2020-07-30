@@ -2,9 +2,9 @@
     <div v-if="!heroLayerTextHidden" class="hero__layer" :style="style" :class="'hero__layer--text-valign-'+ heroLayerTextValign +
                                                                                     ' hero__layer--' + heroLayerAlign + 
                                                                                     ' hero__layer--text-' + heroLayerTextAlign">
-        <h1>{{title}}</h1>
-        <h2 v-if="hasSubtitle">{{subtitle}}</h2>
-        <a aria-label="call-to-action" :href="link">{{linkText}}</a>    
+        <h1 class="hero__layer-item">{{title}}</h1>
+        <h2 class="hero__layer-item" v-if="hasSubtitle">{{subtitle}}</h2>
+        <slot></slot>    
     </div>
 </template>
 <script>
@@ -46,7 +46,7 @@ export default {
         },
         fontFamily: {
             type: String,
-            default: 'Source Sans Pro'
+            default: 'Arial, Helvetica, sans-serif',
         },
     },
     data() {
@@ -61,7 +61,7 @@ export default {
             heroLayerAlign: this.layerAlign,
             heroLayerTextHidden: this.hideLayerText,
             heroLayerBgColor: this.layerBgColor,
-            heroFontFamily: this.fontFamily || 'Arial, Helvetica, sans-serif',
+            heroFontFamily: this.fontFamily,
        }
     },
     computed: {
@@ -129,6 +129,16 @@ export default {
 
 .hero__layer--text-valign-top {
     justify-content: flex-start;
+}
+
+.hero__layer-item {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hero__layer-item:nth-child(1) {
+    margin-top: 10px;
 }
 
 </style>

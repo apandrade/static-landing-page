@@ -6,7 +6,9 @@
        </template>      
       </Menu>
       <Hero v-bind="hero">
-        <HeroLayer v-bind="heroLayer"/>
+        <HeroLayer v-bind="heroLayer">
+          <CustomButton v-bind="heroButton" class="hero__layer-item"></CustomButton>
+        </HeroLayer>
       </Hero>
     </div>
 </template>
