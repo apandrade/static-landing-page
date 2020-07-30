@@ -18,3 +18,11 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+TODO
+- Set hero padding according to menu type chosen
+- Add hero height prop
+- Fix nav and logo mobile to override inline styles
+- Add video layer on hero
+- Add content 
+- add footer
