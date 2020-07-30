@@ -18,7 +18,7 @@ export default {
     htmlAttrs: {
       lang: 'pt',
     },
-    title: process.env.npm_package_name || '',
+    title: 'Static Landing Page',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -39,6 +39,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/themeImport.js',
   ],
   /*
   ** Auto import components
@@ -60,5 +61,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+  },
+
+  theme: 'default'
 }
