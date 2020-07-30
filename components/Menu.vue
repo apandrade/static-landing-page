@@ -44,6 +44,7 @@ export default {
 </script>
 <style>
 .menu {
+    width: 100%;
     z-index: 999;
 }
 .menu--top {
