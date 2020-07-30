@@ -32,16 +32,25 @@ export default {
             heroBgSize: this.bgSize,
        }
     },
+    methods: {
+        bgImageStyle() {
+            return {
+                backgroundImage: `url('${this.heroBgImage}')`,
+                backgroundSize: this.heroBgSize,
+            }
+        },
+        bgColorStyle() {
+            return {
+                backgroundColor: this.heroBgColor,
+            }
+        }
+    },
     computed: {
         hasBgImage() {
             return !!this.bgImage
         },
         style() {
-            let bgImageStyles = '';
-            if(this.hasBgImage)
-                bgImageStyles = `background-image: url('${this.heroBgImage}');background-size: ${this.heroBgSize};`;
-
-            return `background-color: ${this.heroBgColor};${bgImageStyles}`;
+            return this.hasBgImage ? this.bgImageStyle() : this.bgColorStyle();
         },
     }
 }
