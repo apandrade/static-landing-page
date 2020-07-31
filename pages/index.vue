@@ -17,11 +17,11 @@
 export default {
   data() {
     return {
-      menu: this.$theme.menu || {},
-      logo: this.$theme.logo || {},
-      hero: this.$theme.hero || {},
-      heroLayer: this.$theme.heroLayer || {},
-      heroButton: this.$theme.heroButton || {},
+      menu: this.$store.$theme.menu || {},
+      logo: this.$store.$theme.logo || {},
+      hero: this.$store.$theme.hero || {},
+      heroLayer: this.$store.$theme.heroLayer || {},
+      heroButton: this.$store.$theme.heroButton || {},
     }
   },
 }
