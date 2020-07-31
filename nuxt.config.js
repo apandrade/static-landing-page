@@ -39,7 +39,6 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/themeImport.js',
   ],
   /*
   ** Auto import components
