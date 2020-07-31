@@ -16,7 +16,13 @@
 <script>
 export default {
   data() {
-    return this.$theme;
+    return {
+      menu: this.$theme.menu || {},
+      logo: this.$theme.logo || {},
+      hero: this.$theme.hero || {},
+      heroLayer: this.$theme.heroLayer || {},
+      heroButton: this.$theme.heroButton || {},
+    }
   },
 }
 </script>
