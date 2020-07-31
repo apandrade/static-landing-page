@@ -65,19 +65,20 @@ button {
 button[disabled]{
     opacity: 0.5;
     cursor: not-allowed;
-  }
+}
+
 button.danger {
     background-color: #ff4949;
-    color: #fff;
-  }
+    color: #000;
+}
+
 button.success {
     background-color: #13ce66;
-    color: #fff;
-  }
+    color: #000;
+}
+
 button.info {
     background-color: #50bfff;
-    color: #fff;
-  }
-
-
+    color: #000;
+}
 </style>
