@@ -12,18 +12,19 @@ export default {
     props: {
         title: {
             type: String,
-            required: true,
+            default: 'Your Hero Title goes here'
         },
         subtitle: {
             type: String,
+            default: 'Your subtitle goes here'
         },
         link: {
             type: String,
-            required: true,
+            default: 'https://www.google.com'
         },
         linkText: {
             type: String,
-            required: true,
+            default: 'Click Here'
         },
         hideLayerText: {
             type: Boolean,
