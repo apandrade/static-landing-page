@@ -10,6 +10,7 @@
           <slp-button v-bind="heroButton" class="hero__layer-item"></slp-button>
         </slp-hero-layer>
       </slp-hero>
+      <slp-content></slp-content>
       <slp-footer></slp-footer>
     </div>
 </template>
