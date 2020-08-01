@@ -17,6 +17,8 @@
 export default {
   data() {
     return {
+      title: this.$store.state.activeTheme.title || {},
+      meta: this.$store.state.activeTheme.meta || {},
       menu: this.$store.state.activeTheme.menu || {},
       logo: this.$store.state.activeTheme.logo || {},
       hero: this.$store.state.activeTheme.hero || {},
@@ -24,5 +26,11 @@ export default {
       heroButton: this.$store.state.activeTheme.heroButton || {},
     }
   },
+  head() {
+    return {
+      title: this.title,
+      meta: this.meta,
+    }
+  }
 }
 </script>

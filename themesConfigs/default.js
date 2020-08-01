@@ -1,4 +1,12 @@
 export default  {
+    title: 'Static landing page default theme',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Create your own static landing page with nuxt.js'
+      }
+    ],
     menu: {
         bgColor: '#000',
         position: 'top',
