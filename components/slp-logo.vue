@@ -35,18 +35,6 @@ export default {
       type: String,
       default: 'left',
     },
-    width:{
-      type: String,
-    },
-    height:{
-      type: String,
-    },
-    // marginLeft:{
-    //   type: String,
-    // },
-    // marginRight:{
-    //   type: String,
-    // },
     link:{
       type: String,
       default: '/',
@@ -60,12 +48,8 @@ export default {
       logoFontColor: this.fontColor,
       logoLineHeight: this.lineHeight,
       logoFontSize: this.fontSize,
-      logoWidth: this.width,
-      logoHeight: this.height,
       logoPosition: this.position,
       logoLink: this.link,     
-      logoMarginLeft: this.marginLeft,
-      logoMarginRight: this.marginRight,
     }
   },
   methods: {
@@ -75,16 +59,6 @@ export default {
         ...this.logoFontColor && {color: this.logoFontColor},
         ...this.logoFontSize && {fontSize: this.logoFontSize},
         ...this.logoLineHeight && {lineHeight: this.logoLineHeight},
-        // ...this.logoMarginLeft && {marginLeft: this.logoMarginLeft},
-        // ...this.logoMarginRight && {marginRight: this.logoMarginRight},
-      }
-    },
-    imageStyle() {
-      return {
-        ...this.logoWidth && {width: this.logoWidth},
-        ...this.logoHeight && {height: this.logoHeight},
-        ...this.logoMarginLeft && {marginLeft: this.logoMarginLeft},
-        ...this.logoMarginRight && {marginRight: this.logoMarginRight},
       }
     },
   },
@@ -96,7 +70,7 @@ export default {
       return !this.hasImage;
     },
     style() {
-      return this.showText ? this.textStyle() : this.imageStyle();
+      return this.showText ? this.textStyle() : {};
     }
   }
 }
@@ -105,16 +79,22 @@ export default {
 <style lang="scss">
 .logo {
   position: absolute;
-  margin: 0;
   padding: 0;
   animation: appear 1s;
   top: 0;
   bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 200px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 150px;
   height: auto;
   display: block;
+
+  @include tablet {
+    width: 200px;
+    left: unset;
+    right: unset;
+  }
 
   a {
     vertical-align: top;
@@ -139,11 +119,15 @@ export default {
   }
 
   &--right {
-    right: 0;
+    @include tablet {
+      right: 0;
+    }
   }
 
   &--left {
-    left: 0;
+    @include tablet {
+      left: 0;
+    }    
   }
   
   &--center {
