@@ -7,7 +7,7 @@
 </template>
 <style lang="scss">
 .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     z-index: 999;
     width: 100%;
