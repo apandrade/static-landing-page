@@ -48,6 +48,7 @@ export default {
     background-color: var(--primary-dark);
     border-bottom: 10px solid var(--primary);
     height: 100px;
+    box-sizing: content-box;
 
     &--top {
         position: relative;
