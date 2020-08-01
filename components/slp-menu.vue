@@ -8,27 +8,24 @@ export default {
     props: {
         bgColor: {
             type: String,
-            default: 'transparent',
         },
         position: {
             type: String,
-            default: 'default', 
+            default: 'top', 
         },
         height: {
-            type: String,
-            default: '100px', 
+            type: String, 
         },
         borderBottom: {
             type: String,
-            default: 'none', 
         }
     },
     computed: {
         style() {
             return {
-                backgroundColor: this.menuBgColor,
-                height: this.height,
-                borderBottom: this.menuBorderBottom,
+                ...this.menuBgColor && {backgroundColor: this.menuBgColor},
+                ...this.menuHeight && {height: this.menuHeight},
+                ...this.menuBorderBottom && {borderBottom: this.menuBorderBottom},
             };
         }
     },
@@ -42,20 +39,24 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
 .menu {
     width: 100%;
     z-index: 999;
-}
-.menu--top {
-    position: relative;
-}
+    background-color: $menuBgColor;
+    border-bottom: none;
+    height: 100px;
 
-.menu--fixed {
-    position: fixed;
-}
+    &--top {
+        position: relative;
+    }
 
-.menu--default {
-    position: absolute;
+    &--fixed {
+        position: fixed;
+    }
+    
+    &--default {
+        position: absolute;
+    }
 }
 </style>

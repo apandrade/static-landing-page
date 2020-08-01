@@ -1,8 +1,10 @@
 <template>
   <div class="logo" :class="'logo--'+ logoPosition" :style="style">
-    <a href="/" >
+    <a v-if="hasImage" href="/" >
       <img v-if="hasImage" alt="site logo" :src="logoImage"/>
-      <span v-if="showText">{{text}}</span>
+    </a>
+    <a v-else :href="logoLink" >
+      {{text}}
     </a>
   </div>
 </template>
@@ -10,7 +12,7 @@
 <script>
 export default {
   props: {
-    url: {
+    imageUrl: {
       type: String,
     },
     text: {
@@ -19,19 +21,15 @@ export default {
     },
     fontFamily: {
       type: String,
-      default: 'Arial, Helvetica, sans-serif',
     },
     fontSize: {
       type: String,
-      default: '25px',
     },
     lineHeight: {
       type: String,
-      default: '30px',
     },
     fontColor:{
       type: String,
-      default: '#000',
     },
     position:{
       type: String,
@@ -39,26 +37,26 @@ export default {
     },
     width:{
       type: String,
-      default: '250px',
     },
     height:{
       type: String,
-      default: '100%',
     },
     marginLeft:{
       type: String,
-      default: '50px',
     },
     marginRight:{
       type: String,
-      default: '50px',
+    },
+    link:{
+      type: String,
+      default: '/',
     },
   },
   data() {
     return {
-      logoImage: this.url,
+      logoImage: this.imageUrl,
       logoText: this.text,
-      logoFont: this.fontFamily,
+      logoFontFamily: this.fontFamily,
       logoFontColor: this.fontColor,
       logoLineHeight: this.lineHeight,
       logoFontSize: this.fontSize,
@@ -67,25 +65,26 @@ export default {
       logoPosition: this.position,
       logoMarginLeft: this.marginLeft,
       logoMarginRight: this.marginRight,
+      logoLink: this.link,     
     }
   },
   methods: {
     textStyle() {
       return {
-        fontFamily: this.logoFont,
-        color: this.logoFontColor,
-        fontSize: this.logoFontSize,
-        lineHeight: this.lineHeight,
-        marginLeft: this.logoMarginLeft,
-        marginRight: this.marginRight,
+        ...this.logoFontFamily && {fontFamily: this.logoFontFamily},
+        ...this.logoFontColor && {color: this.logoFontColor},
+        ...this.logoFontSize && {fontSize: this.logoFontSize},
+        ...this.logoLineHeight && {lineHeight: this.logoLineHeight},
+        ...this.logoMarginLeft && {marginLeft: this.logoMarginLeft},
+        ...this.logoMarginRight && {marginRight: this.logoMarginRight},
       }
     },
     imageStyle() {
       return {
-        width: this.logoWidth,
-        height: this.logoHeight,
-        marginLeft: this.logoMarginLeft,
-        marginRight: this.marginRight,
+        ...this.logoWidth && {width: this.logoWidth},
+        ...this.logoHeight && {height: this.logoHeight},
+        ...this.logoMarginLeft && {marginLeft: this.logoMarginLeft},
+        ...this.logoMarginRight && {marginRight: this.logoMarginRight},
       }
     },
   },
@@ -103,8 +102,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .logo {
+  font-family: $font-logo;
   position: absolute;
   margin: 0;
   padding: 0;
@@ -113,44 +113,47 @@ export default {
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.logo a {
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-}
-
-.logo span {
+  width: 200px;
+  height: auto;
+  font-size: 35px;
+  line-height: 30px;
+  margin-left: $logo-horizintal-margin;
+  margin-right: $logo-horizintal-margin;
   display: block;
-}
+  text-align: center;
 
-.logo--right {
-  right: 0;
-}
+  a {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: $black;
+  }
 
-.logo--left {
-  left: 0;
-}
+  img {
+    width: 100%;
+    height: 100%;
+  }
 
-.logo--center {
-  left: 0;
-  right: 0;
-  margin-right: auto;
-  margin-left: auto;
-}
+  span {
+    display: block;
+  }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
+  &--right {
+    right: 0;
+  }
+
+  &--left {
+    left: 0;
+  }
+  
+  &--center {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>

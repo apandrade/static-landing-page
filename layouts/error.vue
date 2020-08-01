@@ -20,7 +20,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 .container--error {
     background-color: #ffe000;
     font-family: 'Advent Pro';
@@ -32,43 +32,35 @@
 }
 .error__message {
     text-align: center;
-}
-.error__message h1 {
-    font-size: 5rem;
-    margin-bottom: 10px;
-}
-
-.error__message h2 {
-    font-size: 2rem;
-    margin-bottom: 50px;
-}
-.error__message a {
-    font-size: 1.2rem;
-    color: gray;
-    text-decoration: none;
-    font-weight: bold;
-    background-color: transparent;
-    border-radius: 15px;
-    padding: 10px;
-    border: 5px solid gray;
-}
-
-.error__message a:hover {
-    background-color: rgba(242, 247, 247, 0.8);
-}
-
-@media ( min-width: 768px ) {
-    .error__message h1 {
-        font-size: 8rem;
-    }
-
-    .error__message h2 {
+    h1 {
         font-size: 5rem;
+        margin-bottom: 10px;
+        @include tablet {
+            font-size: 8rem;
+        }        
     }
-
-    .error__message a {
-       font-size: 3rem; 
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 50px;
+        @include tablet {
+            font-size: 5rem;
+        } 
+    }
+    a {
+        font-size: 1.2rem;
+        color: gray;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: transparent;
+        border-radius: 15px;
+        padding: 10px;
+        border: 5px solid gray;
+        &:hover {
+            background-color: rgba(242, 247, 247, 0.8);
+        }
+        @include tablet {
+            font-size: 3rem;
+        } 
     }
 }
-
 </style>

@@ -52,33 +52,34 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 button {
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  color: #333;
-  background-color:#fff;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-}
-button[disabled]{
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+    padding: 10px 20px;
+    color: $black;
+    background-color:$white;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
 
-button.danger {
-    background-color: #ff4949;
-    color: #000;
-}
+    &[disabled]{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 
-button.success {
-    background-color: #13ce66;
-    color: #000;
-}
+    &.danger {
+        background-color: $danger;
+        color: $black;
+    }
 
-button.info {
-    background-color: #50bfff;
-    color: #000;
+    &.success {
+        background-color: $success;
+        color: $black;
+    }
+
+    &.info {
+        background-color: $info;
+        color: $black;
+    }   
 }
 </style>

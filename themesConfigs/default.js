@@ -20,18 +20,20 @@ export default  {
         borderBottom: '1px solid red',
     },
     logo: {
-        url:'https://via.placeholder.com/250x100',
+        imageUrl:'https://via.placeholder.com/250x100',
         position: 'center',
         height: '100px',
         width: '250px',
         marginLeft: 'auto',
         marginRight: 'auto',
+        link: '/',
     },
     hero: {        
       hideLayerText: false,
       size: 'half',
       bgImage: '/default/bg-hero.png',
       bgColor: 'green',
+      bgRepeat: 'no-repeat',
     },
     heroLayer: {
       title: 'Hero Title',

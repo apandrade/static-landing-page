@@ -14,14 +14,15 @@ export default {
         },
         bgColor: {
             type: String,
-            default: 'red',
         },
         bgImage: {
             type: String,
         },
         bgSize: {
             type: String,
-            default: 'cover',
+        },
+        bgRepeat: {
+            type: String,
         },
     },
     data() {
@@ -30,18 +31,20 @@ export default {
             heroBgColor: this.hasBgImage ? 'transparent' : this.bgColor,
             heroBgImage: this.bgImage,
             heroBgSize: this.bgSize,
+            heroBgRepeat: this.bgRepeat,
        }
     },
     methods: {
         bgImageStyle() {
             return {
-                backgroundImage: `url('${this.heroBgImage}')`,
-                backgroundSize: this.heroBgSize,
+                ...this.heroBgImage && {backgroundImage: `url('${this.heroBgImage}')`},
+                ...this.heroBgSize && {backgroundSize: this.heroBgSize},
+                ...this.heroBgRepeat && {backgroundRepeat: this.heroBgRepeat}
             }
         },
         bgColorStyle() {
             return {
-                backgroundColor: this.heroBgColor,
+                ...this.heroBgColor && {backgroundColor: this.heroBgColor},
             }
         }
     },
@@ -55,23 +58,24 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
 .hero {
     position: absolute;
     width: 100%;
-}
+    background-color: $heroBgColor;
+    background-size: cover;
 
-.hero--half {
-    height: 50vh;
-}
+    &--half {
+        height: 50vh;
+    }
 
-.hero--full {
-    height: calc( 100vh - 100px);/*100px represents top menu height */
+    &--full {
+        height: calc( 100vh - 100px);/*100px represents top menu height */
+    }
 }
 
 .container--hero {
     position: relative;
     height: 100%;
 }
-
 </style>

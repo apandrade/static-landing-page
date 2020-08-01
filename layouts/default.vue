@@ -2,17 +2,9 @@
   <Nuxt />
 </template>
 
-<style>
+<style lang="scss">
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: $font-default;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -22,6 +14,7 @@ html {
   box-sizing: border-box;
   background-color: transparent;
   scroll-behavior: smooth;
+  color: $black;
 }
 
 *,
@@ -31,13 +24,13 @@ html {
   margin: 0;
 }
 
-.container--fluid {
-  width: 95%;
-  margin: 0 auto;
-}
-@media ( min-width: 768px ) {
-    .container--fluid{
-        width: 80%;
+.container {
+    &--fluid {
+      width: 95%;
+      margin: 0 auto;
+    @include tablet {
+      width: 80%;
     }
+  }
 }
 </style>
