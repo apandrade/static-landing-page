@@ -1,12 +1,18 @@
 export default  {
-    title: 'Static landing page default theme',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Create your own static landing page with nuxt.js'
-      }
-    ],
+    head: {
+      title: 'Static landing page default theme',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Create your own static landing page with nuxt.js'
+        }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/default/favicon.ico' },
+        { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Advent Pro&display=swap' },
+      ],
+    },
     menu: {
         bgColor: '#000',
         position: 'top',
@@ -24,7 +30,7 @@ export default  {
     hero: {        
       hideLayerText: false,
       size: 'half',
-      bgImage: '/bg-hero.png',
+      bgImage: '/default/bg-hero.png',
       bgColor: 'green',
     },
     heroLayer: {
