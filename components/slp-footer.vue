@@ -1,6 +1,6 @@
 <template>
     <footer id="footer" class="footer">
-        <div class="container--fluid">
+        <div class="container container--fluid">
             <p class="footer__text">Software Livre</p>
         </div>
     </footer>
