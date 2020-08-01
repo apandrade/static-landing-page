@@ -3,8 +3,25 @@
 </template>
 
 <style lang="scss">
+:root {
+  --primary: #546e7a;
+  --primary-light: #819ca9;
+  --primary-dark: #29434e;
+  --secondary: #bf360c;
+  --secondary-light: #f9683a;
+  --secondary-dark: #870000;
+  --text-dark: #000;
+  --text-light: #fff;
+}
 html {
-  font-family: $font-default;
+  font-family: 'Source Sans Pro',
+                -apple-system,
+                BlinkMacSystemFont,
+                'Segoe UI',
+                Roboto,
+                'Helvetica Neue',
+                Arial,
+                sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -14,14 +31,7 @@ html {
   box-sizing: border-box;
   background-color: transparent;
   scroll-behavior: smooth;
-  color: $black;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+  color: var(--text-dark);
 }
 
 .container {

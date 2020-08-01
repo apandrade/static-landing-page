@@ -90,6 +90,7 @@ export default {
         flex-direction: column;
         padding: 10px;
         background-size: cover;
+        color: var(--text-dark);
 
         &--left {
             left: 0;

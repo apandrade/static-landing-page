@@ -1,5 +1,5 @@
 import themes from '~/themesConfigs';
 
 export const state = () => ({
-    activeTheme: themes['default'],
+    activeTheme: themes['blank'],
 });

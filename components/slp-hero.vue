@@ -10,7 +10,7 @@ export default {
     props: {        
         size: {
             type: String,
-            default: 'full'
+            default: 'half'
         },
         bgColor: {
             type: String,
@@ -62,7 +62,7 @@ export default {
 .hero {
     position: absolute;
     width: 100%;
-    background-color: $heroBgColor;
+    background-color: var(--secondary-light);
     background-size: cover;
 
     &--half {

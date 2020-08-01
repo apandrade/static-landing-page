@@ -104,7 +104,6 @@ export default {
 
 <style lang="scss">
 .logo {
-  font-family: $font-logo;
   position: absolute;
   margin: 0;
   padding: 0;
@@ -115,21 +114,23 @@ export default {
   margin-bottom: auto;
   width: 200px;
   height: auto;
-  font-size: 35px;
-  line-height: 30px;
-  margin-left: $logo-horizintal-margin;
-  margin-right: $logo-horizintal-margin;
+  margin-left: 50px;
+  margin-right: 50px;
   display: block;
   text-align: center;
 
   a {
+    position: relative;
     vertical-align: top;
     display: inline-block;
     text-align: center;
     text-decoration: none;
     width: 100%;
-    height: 100%;
-    color: $black;
+    color: var(--text-light);
+    display: inline-block;
+    font-size: 35px;
+    line-height: 100px;
+    height: 100px;
   }
 
   img {

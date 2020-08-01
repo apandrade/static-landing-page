@@ -43,8 +43,8 @@ export default {
 .menu {
     width: 100%;
     z-index: 999;
-    background-color: $menuBgColor;
-    border-bottom: none;
+    background-color: var(--primary-dark);
+    border-bottom: 10px solid var(--primary);
     height: 100px;
 
     &--top {

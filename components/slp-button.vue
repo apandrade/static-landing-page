@@ -55,11 +55,12 @@ export default {
 <style lang="scss">
 button {
     padding: 10px 20px;
-    color: $black;
-    background-color:$white;
+    color: var(--text-light);
+    background-color: var(primary--dark);
     border-radius: 4px;
     border: none;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
 
     &[disabled]{
@@ -68,18 +69,18 @@ button {
     }
 
     &.danger {
-        background-color: $danger;
-        color: $black;
+        background-color: var(--secondary-dark);
+        color: var(--text-light);
     }
 
     &.success {
-        background-color: $success;
-        color: $black;
+        background-color: var(--primary);
+        color: var(--text-light);
     }
 
     &.info {
-        background-color: $info;
-        color: $black;
+        background-color: var(--primary-light);
+        color: var(--text-dark);
     }   
 }
 </style>
