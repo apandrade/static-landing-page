@@ -1,6 +1,6 @@
 <template>
     <div id="hero" class="hero" :class="'hero--' + heroSize" :style='style'>
-        <div class="container--hero container--fluid">
+        <div class="container container--fluid">
             <slot></slot>
         </div>
     </div>
@@ -60,7 +60,7 @@ export default {
 </script>
 <style lang="scss">
 .hero {
-    position: absolute;
+    position: relative;
     width: 100%;
     background-color: var(--secondary-light);
     background-size: cover;
@@ -72,10 +72,5 @@ export default {
     &--full {
         height: calc( 100vh - 100px);/*100px represents top menu height */
     }
-}
-
-.container--hero {
-    position: relative;
-    height: 100%;
 }
 </style>
