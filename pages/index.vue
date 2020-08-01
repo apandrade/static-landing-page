@@ -1,15 +1,15 @@
 <template>
     <div>
-      <Menu v-bind="menu">
+      <slp-menu v-bind="menu">
        <template slot="logo">
-          <Logo v-bind="logo"/>
+          <slp-logo v-bind="logo"/>
        </template>      
-      </Menu>
-      <Hero v-bind="hero">
-        <HeroLayer v-bind="heroLayer">
-          <Button v-bind="heroButton" class="hero__layer-item"></Button>
-        </HeroLayer>
-      </Hero>
+      </slp-menu>
+      <slp-hero v-bind="hero">
+        <slp-hero-layer v-bind="heroLayer">
+          <slp-button v-bind="heroButton" class="hero__layer-item"></slp-button>
+        </slp-hero-layer>
+      </slp-hero>
     </div>
 </template>
 
