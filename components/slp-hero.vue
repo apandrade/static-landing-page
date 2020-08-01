@@ -1,5 +1,5 @@
 <template>
-    <div class="hero" :class="'hero--' + heroSize" :style='style'>
+    <div id="hero" class="hero" :class="'hero--' + heroSize" :style='style'>
         <div class="container--hero container--fluid">
             <slot></slot>
         </div>
