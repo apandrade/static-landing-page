@@ -1,6 +1,6 @@
 <template>
     <nav id="navigation" class="menu" :class="'menu--' + menuPosition" :style="style">
-        <div class="container--fluid">
+        <div class="container container--fluid">
             <slot name="logo"></slot>
         </div>    
     </nav>
