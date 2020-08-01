@@ -4,6 +4,7 @@
 
 <style lang="scss">
 :root {
+  --root-bg-color: #ff8e1973;
   --primary: #546e7a;
   --primary-light: #819ca9;
   --primary-dark: #29434e;
@@ -29,16 +30,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: transparent;
+  background-color: var(--root-bg-color);
   scroll-behavior: smooth;
   color: var(--text-dark);
 }
 
 .container {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
     &--fluid {
-      position: relative;
       width: 95%;
-      margin: 0 auto;
     @include tablet {
       width: 80%;
     }
