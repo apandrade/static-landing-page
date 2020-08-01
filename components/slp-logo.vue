@@ -117,7 +117,6 @@ export default {
   display: block;
 
   a {
-    position: relative;
     vertical-align: top;
     display: inline-block;
     text-align: left;
