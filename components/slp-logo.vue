@@ -41,12 +41,12 @@ export default {
     height:{
       type: String,
     },
-    marginLeft:{
-      type: String,
-    },
-    marginRight:{
-      type: String,
-    },
+    // marginLeft:{
+    //   type: String,
+    // },
+    // marginRight:{
+    //   type: String,
+    // },
     link:{
       type: String,
       default: '/',
@@ -63,9 +63,9 @@ export default {
       logoWidth: this.width,
       logoHeight: this.height,
       logoPosition: this.position,
+      logoLink: this.link,     
       logoMarginLeft: this.marginLeft,
       logoMarginRight: this.marginRight,
-      logoLink: this.link,     
     }
   },
   methods: {
@@ -75,8 +75,8 @@ export default {
         ...this.logoFontColor && {color: this.logoFontColor},
         ...this.logoFontSize && {fontSize: this.logoFontSize},
         ...this.logoLineHeight && {lineHeight: this.logoLineHeight},
-        ...this.logoMarginLeft && {marginLeft: this.logoMarginLeft},
-        ...this.logoMarginRight && {marginRight: this.logoMarginRight},
+        // ...this.logoMarginLeft && {marginLeft: this.logoMarginLeft},
+        // ...this.logoMarginRight && {marginRight: this.logoMarginRight},
       }
     },
     imageStyle() {
@@ -149,8 +149,8 @@ export default {
   &--center {
     left: 0;
     right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: auto!important;
+    margin-left: auto!important;
   }
 }
 </style>
