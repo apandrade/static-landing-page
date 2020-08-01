@@ -114,16 +114,13 @@ export default {
   margin-bottom: auto;
   width: 200px;
   height: auto;
-  margin-left: 50px;
-  margin-right: 50px;
   display: block;
-  text-align: center;
 
   a {
     position: relative;
     vertical-align: top;
     display: inline-block;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     width: 100%;
     color: var(--text-light);

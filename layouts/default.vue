@@ -36,6 +36,7 @@ html {
 
 .container {
     &--fluid {
+      position: relative;
       width: 95%;
       margin: 0 auto;
     @include tablet {

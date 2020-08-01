@@ -88,7 +88,7 @@ export default {
         margin-bottom: auto;
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 10px 0;
         background-size: cover;
         color: var(--text-dark);
 

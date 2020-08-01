@@ -1,6 +1,8 @@
 <template>
-    <nav class="menu" :class="'menu--' + menuPosition" :style="style">
-        <slot name="logo"></slot>
+    <nav id="navigation" class="menu" :class="'menu--' + menuPosition" :style="style">
+        <div class="container--fluid">
+            <slot name="logo"></slot>
+        </div>    
     </nav>
 </template>
 <script>
