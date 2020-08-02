@@ -18,10 +18,6 @@ export default {
             type: String,
             default: 'Your subtitle goes here'
         },
-        hideLayerText: {
-            type: Boolean,
-            default: false,
-        },
         layerTextAlign: {
             type: String,
             default: 'left'
@@ -40,9 +36,6 @@ export default {
         fontFamily: {
             type: String,
         },
-        videoUrl: {
-            type: String,
-        },
     },
     data() {
        return {
@@ -51,7 +44,6 @@ export default {
             heroLayerTextAlign: this.layerTextAlign,
             heroLayerTextValign: this.layerTextValign,
             heroLayerAlign: this.layerAlign,
-            heroLayerTextHidden: this.hideLayerText,
             heroLayerBgColor: this.layerBgColor,
             heroLayerFontFamily: this.fontFamily,
        }
