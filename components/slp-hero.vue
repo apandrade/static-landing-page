@@ -68,7 +68,7 @@ export default {
     }
 
     &--full {
-        height: calc( 100vh - 100px);/*100px represents top menu height */
+        height: 100vh;
     }
 }
 </style>
