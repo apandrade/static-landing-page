@@ -21,7 +21,7 @@ export default {
     return {
       head: this.$store.state.activeTheme.head || {},
       menu: this.$store.state.activeTheme.menu || {},
-      logo: this.$store.state.activeTheme.logo || {},
+      logo: this.$store.state.activeTheme.menu.logo || {},
       hero: this.$store.state.activeTheme.hero || {},
       heroLayerText: this.$store.state.activeTheme.heroLayerText || {},
       heroButton: this.$store.state.activeTheme.heroButton || {},
