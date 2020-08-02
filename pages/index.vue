@@ -23,16 +23,17 @@
 <script>
 export default {
   data() {
+    const {activeTheme} =  this.$store.state;
     return {
-      head: this.$store.state.activeTheme.head || {},
-      menu: this.$store.state.activeTheme.menu || {},
-      logo: this.$store.state.activeTheme.logo || {},
-      hero: this.$store.state.activeTheme.hero || {},
-      heroLayerCta: this.$store.state.activeTheme.heroLayerCta || {},
-      cta: this.$store.state.activeTheme.cta || {},
-      ctaButton: this.$store.state.activeTheme.ctaButton || {},
-      heroLayerVideo: this.$store.state.activeTheme.heroLayerVideo || {},
-      youtobeVideo: this.$store.state.activeTheme.youtubeVideo || {},
+      head: activeTheme.head || {},
+      menu: activeTheme.menu || {},
+      logo: activeTheme.logo || {},
+      hero: activeTheme.hero || {},
+      heroLayerCta: activeTheme.heroLayerCta || {},
+      cta: activeTheme.cta || {},
+      ctaButton: activeTheme.ctaButton || {},
+      heroLayerVideo: activeTheme.heroLayerVideo || {},
+      youtobeVideo: activeTheme.youtubeVideo || {},
     }
   },
   head() {
