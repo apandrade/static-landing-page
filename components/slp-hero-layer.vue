@@ -1,60 +1,33 @@
 <template>
-    <div class="hero__layer" :style="style" :class="'hero__layer--text-valign-'+ heroLayerTextValign +
-                                                                                    ' hero__layer--' + heroLayerAlign + 
-                                                                                    ' hero__layer--text-' + heroLayerTextAlign">
-        <h1 class="hero__layer-item">{{heroLayerTitle}}</h1>
-        <h2 class="hero__layer-item" v-if="hasSubtitle">{{heroLayerSubtitle}}</h2>
+    <div class="hero__layer" :style="style" :class="'hero__layer--' + heroLayerAlign + ' hero__layer--content-valign-' + heroContentValign">
         <slot></slot>    
     </div>
 </template>
 <script>
 export default {
-    props: {
-        title: {
-            type: String,
-            default: 'Your Hero Title goes here'
-        },
-        subtitle: {
-            type: String,
-            default: 'Your subtitle goes here'
-        },
-        layerTextAlign: {
+    props: {       
+        position: {
             type: String,
             default: 'left'
         },
-        layerTextValign: {
-            type: String,
-            default: 'center'
-        },
-        layerAlign: {
-            type: String,
-            default: 'left'
-        },
-        layerBgColor: {
+        bgColor: {
             type: String,
         },
-        fontFamily: {
+        contentValign: {
             type: String,
-        },
+            default: 'center',
+        }
     },
     data() {
        return {
-            heroLayerTitle: this.title,
-            heroLayerSubtitle: this.subtitle,
-            heroLayerTextAlign: this.layerTextAlign,
-            heroLayerTextValign: this.layerTextValign,
-            heroLayerAlign: this.layerAlign,
-            heroLayerBgColor: this.layerBgColor,
-            heroLayerFontFamily: this.fontFamily,
+            heroLayerAlign: this.position,
+            heroLayerBgColor: this.bgColor,
+            heroContentValign: this.contentValign,
        }
     },
     computed: {
-        hasSubtitle() {
-            return !!this.heroLayerSubtitle;
-        },
         style() {           
             return  {
-                ...this.heroLayerFontFamily && {fontFamily: this.heroLayerFontFamily},
                 ...this.heroLayerBgColor && {background: this.heroLayerBgColor},                
             };
         },
@@ -96,42 +69,17 @@ export default {
             margin-left: auto;
         }
 
-        &--text-left {
-            align-items: flex-start;
-            text-align: left;
-        }
-
-        &--text-right {
-            align-items: flex-end;
-            text-align: right;
-        }
-
-        &--text-center {
-            align-items: center;
-            text-align: center;            
-        }
-
-        &--text-valign-center {
+        &--content-valign-center {
             justify-content: center;
         }
 
-        &--text-valign-bottom {
+        &--content-valign-bottom {
             justify-content: flex-end;
         }
 
-        &--text-valign-top {
+        &--content-valign-top {
             justify-content: flex-start;
-        }
-    }
-
-    &__layer-item {
-        margin-bottom: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    &__layer-item:nth-child(1) {
-        margin-top: 10px;
-    }
+        }      
+    }    
 }
 </style>

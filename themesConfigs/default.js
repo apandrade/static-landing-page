@@ -36,16 +36,19 @@ export default  {
       bgRepeat: 'no-repeat',
       bgSize: 'cover',
     },
-    heroLayerText: {
-      title: 'Lorem Ipsum dolor sit amet',
-      subtitle: 'Lorem Ipsum dolor sit amet',
-      layerTextAlign: 'center',
-      layerTextValign: 'center',
-      layerAlign: 'left',
-      layerBgColor: 'rgba(255, 255, 255, 0.5)',
-      fontFamily: 'Advent Pro',      
+    heroLayerCta: {
+      position: 'left',
+      bgColor: 'rgba(255, 255, 255, 0.5)',
+      contentValign: undefined,
+      cta: {
+        title: 'Lorem Ipsum dolor sit amet',
+        subtitle: 'Lorem Ipsum dolor sit amet',
+        textAlign: 'center',
+        textValign: 'center',
+        fontFamily: 'Advent Pro',
+      }      
     },
-    heroButton: {
+    ctaButton: {
         type: 'danger',
         disabled: undefined,
         url: 'http://www.google.com',

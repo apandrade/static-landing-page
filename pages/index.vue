@@ -6,8 +6,10 @@
        </template>      
       </slp-menu>
       <slp-hero v-bind="hero">
-        <slp-hero-layer v-bind="heroLayerText">
-          <slp-button v-bind="heroButton" class="hero__layer-item"></slp-button>
+        <slp-hero-layer v-bind="heroLayerCta">
+          <slp-cta v-bind="cta">
+            <slp-button v-bind="ctaButton" class="cta__item"></slp-button>
+          </slp-cta>
         </slp-hero-layer>
       </slp-hero>
       <slp-content></slp-content>
@@ -23,8 +25,9 @@ export default {
       menu: this.$store.state.activeTheme.menu || {},
       logo: this.$store.state.activeTheme.menu.logo || {},
       hero: this.$store.state.activeTheme.hero || {},
-      heroLayerText: this.$store.state.activeTheme.heroLayerText || {},
-      heroButton: this.$store.state.activeTheme.heroButton || {},
+      heroLayerCta: this.$store.state.activeTheme.heroLayerCta || {},
+      cta: this.$store.state.activeTheme.heroLayerCta.cta || {},
+      ctaButton: this.$store.state.activeTheme.ctaButton || {},
     }
   },
   head() {
