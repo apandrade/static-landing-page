@@ -28,38 +28,29 @@ export default {
     data() {
        return {
             heroSize: this.size,
-            heroBgColor: this.hasBgImage ? 'transparent' : this.bgColor,
+            heroBgColor: this.bgColor,
             heroBgImage: this.bgImage,
             heroBgSize: this.bgSize,
             heroBgRepeat: this.bgRepeat,
        }
-    },
-    methods: {
-        bgImageStyle() {
-            return {
-                ...this.heroBgImage && {backgroundImage: `url('${this.heroBgImage}')`},
-                ...this.heroBgSize && {backgroundSize: this.heroBgSize},
-                ...this.heroBgRepeat && {backgroundRepeat: this.heroBgRepeat},
-                ...this.heroPaddingTop && {paddingTop: this.heroPaddingTop},
-            }
-        },
-        bgColorStyle() {
-            return {
-                ...this.heroBgColor && {backgroundColor: this.heroBgColor},
-                ...this.heroPaddingTop && {paddingTop: this.heroPaddingTop},
-            }
-        }
     },
     computed: {
         hasBgImage() {
             return !!this.bgImage
         },
         style() {
-            return this.hasBgImage ? this.bgImageStyle() : this.bgColorStyle();
+            return {
+                ...this.heroBgImage && {backgroundImage: `url('${this.heroBgImage}')`},
+                ...this.heroBgSize && {backgroundSize: this.heroBgSize},
+                ...this.heroBgRepeat && {backgroundRepeat: this.heroBgRepeat},
+                ...this.heroPaddingTop && {paddingTop: this.heroPaddingTop},
+                ...this.heroBgColor && {backgroundColor: this.heroBgColor},
+            }
         },
         heroPaddingTop() {
-            const menuPosition = this.$store.state.activeTheme.menu.position;
-            const menuHeight = this.$store.state.activeTheme.menu.height;
+            const menu = this.$store.state.activeTheme.menu;
+            const menuPosition = menu && menu.position;
+            const menuHeight = menu && menu.height;
             return menuPosition !== 'top' ? menuHeight : false;
         }
     }
@@ -69,9 +60,8 @@ export default {
 .hero {
     position: relative;
     width: 100%;
-    background-color: var(--secondary-light);
+    background-color: transparent;
     background-size: cover;
-    padding-top: 100px;
 
     &--half {
         height: 50vh;
