@@ -23,10 +23,10 @@ export default {
     return {
       head: this.$store.state.activeTheme.head || {},
       menu: this.$store.state.activeTheme.menu || {},
-      logo: this.$store.state.activeTheme.menu.logo || {},
+      logo: this.$store.state.activeTheme.logo || {},
       hero: this.$store.state.activeTheme.hero || {},
       heroLayerCta: this.$store.state.activeTheme.heroLayerCta || {},
-      cta: this.$store.state.activeTheme.heroLayerCta.cta || {},
+      cta: this.$store.state.activeTheme.cta || {},
       ctaButton: this.$store.state.activeTheme.ctaButton || {},
     }
   },

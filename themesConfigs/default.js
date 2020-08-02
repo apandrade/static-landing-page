@@ -18,16 +18,16 @@ export default  {
         position: 'default',
         height: '80px',
         borderBottom: '10px solid red',
-        logo: {
-          imageUrl:'https://via.placeholder.com/250x100',
-          position: 'center',
-          link: '/',
-          text: 'Site Logo',
-          fontFamily: undefined,
-          fontSize: undefined,
-          fontColor: undefined,
-          lineHeight: undefined,
-        },
+    },
+    logo: {
+      imageUrl:'https://via.placeholder.com/250x100',
+      position: 'center',
+      link: '/',
+      text: 'Site Logo',
+      fontFamily: undefined,
+      fontSize: undefined,
+      fontColor: undefined,
+      lineHeight: undefined,
     },
     hero: {        
       size: 'full',
@@ -39,14 +39,14 @@ export default  {
     heroLayerCta: {
       position: 'left',
       bgColor: 'rgba(255, 255, 255, 0.5)',
-      contentValign: undefined,
-      cta: {
-        title: 'Lorem Ipsum dolor sit amet',
-        subtitle: 'Lorem Ipsum dolor sit amet',
-        textAlign: 'center',
-        textValign: 'center',
-        fontFamily: 'Advent Pro',
-      }      
+      contentValign: undefined,            
+    },
+    cta: {
+      title: 'Lorem Ipsum dolor sit amet',
+      subtitle: 'Lorem Ipsum dolor sit amet',
+      textAlign: 'center',
+      textValign: 'center',
+      fontFamily: 'Advent Pro',
     },
     ctaButton: {
         type: 'danger',
