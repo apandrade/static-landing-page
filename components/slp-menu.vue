@@ -49,6 +49,7 @@ export default {
     border-bottom: 10px solid var(--primary);
     height: 100px;
     box-sizing: content-box;
+    min-height: 80px !important;
 
     &--top {
         position: relative;
