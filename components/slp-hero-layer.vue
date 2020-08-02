@@ -2,8 +2,8 @@
     <div v-if="!heroLayerTextHidden" class="hero__layer" :style="style" :class="'hero__layer--text-valign-'+ heroLayerTextValign +
                                                                                     ' hero__layer--' + heroLayerAlign + 
                                                                                     ' hero__layer--text-' + heroLayerTextAlign">
-        <h1 class="hero__layer-item">{{title}}</h1>
-        <h2 class="hero__layer-item" v-if="hasSubtitle">{{subtitle}}</h2>
+        <h1 class="hero__layer-item">{{heroLayerTitle}}</h1>
+        <h2 class="hero__layer-item" v-if="hasSubtitle">{{heroLayerSubtitle}}</h2>
         <slot></slot>    
     </div>
 </template>
@@ -18,14 +18,14 @@ export default {
             type: String,
             default: 'Your subtitle goes here'
         },
-        link: {
-            type: String,
-            default: 'https://www.google.com'
-        },
-        linkText: {
-            type: String,
-            default: 'Click Here'
-        },
+        // link: {
+        //     type: String,
+        //     default: 'https://www.google.com'
+        // },
+        // linkText: {
+        //     type: String,
+        //     default: 'Click Here'
+        // },
         hideLayerText: {
             type: Boolean,
             default: false,
@@ -48,31 +48,34 @@ export default {
         fontFamily: {
             type: String,
         },
+        videoUrl: {
+            type: String,
+        },
     },
     data() {
        return {
-            heroTitle: this.title,
-            heroSubtitle: this.subtitle,
-            heroLink: this.link,
-            heroLinkText: this.linkText,
+            heroLayerTitle: this.title,
+            heroLayerSubtitle: this.subtitle,
+            // heroLayerLink: this.link,
+            // heroLayerLinkText: this.linkText,
             heroLayerTextAlign: this.layerTextAlign,
             heroLayerTextValign: this.layerTextValign,
             heroLayerAlign: this.layerAlign,
             heroLayerTextHidden: this.hideLayerText,
             heroLayerBgColor: this.layerBgColor,
-            heroFontFamily: this.fontFamily,
+            heroLayerFontFamily: this.fontFamily,
        }
     },
     computed: {
         hasSubtitle() {
-            return !!this.heroSubtitle;
+            return !!this.heroLayerSubtitle;
         },
         style() {           
             return  {
-                ...this.heroFontFamily && {fontFamily: this.heroFontFamily},
-                ...this.heroLayerBgColor && {background: this.heroLayerBgColor}
+                ...this.heroLayerFontFamily && {fontFamily: this.heroLayerFontFamily},
+                ...this.heroLayerBgColor && {background: this.heroLayerBgColor},                
             };
-        }
+        },
     }
 }
 </script>
@@ -81,7 +84,7 @@ export default {
     &__layer {
         position: absolute;
         height: 300px;
-        width: 50%;
+        width: 90%;
         top: 0;
         bottom: 0;
         margin-top: auto;
@@ -91,6 +94,10 @@ export default {
         padding: 10px 0;
         background-size: cover;
         color: var(--text-dark);
+
+        @include desktop {
+           width: 50%; 
+        }
 
         &--left {
             left: 0;
@@ -109,14 +116,17 @@ export default {
 
         &--text-left {
             align-items: flex-start;
+            text-align: left;
         }
 
         &--text-right {
             align-items: flex-end;
+            text-align: right;
         }
 
         &--text-center {
             align-items: center;
+            text-align: center;            
         }
 
         &--text-valign-center {
