@@ -124,7 +124,11 @@ export default {
 
   &--right {
     @include tablet {
+      text-align: right;
       right: 0;
+      a {
+        text-align: right;
+      }      
       img {
         right: 0;
       }
@@ -133,7 +137,11 @@ export default {
 
   &--left {
     @include tablet {
+      text-align: left;
       left: 0;
+      a {
+        text-align: left;
+      }
       img {
         left: 0;
       }
@@ -145,6 +153,10 @@ export default {
     right: 0;
     margin-right: auto!important;
     margin-left: auto!important;
+    text-align: center;
+    a {
+      text-align: center;
+    }
     img {
       left: 0;
       right: 0;
