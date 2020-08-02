@@ -1,6 +1,6 @@
 <template>
   <div class="logo" :class="'logo--'+ logoPosition" :style="style">
-    <a v-if="hasImage" href="/" >
+    <a v-if="hasImage" :class="{'logo__image' : hasImage}" href="/" >
       <img v-if="hasImage" alt="site logo" :src="logoImage"/>
     </a>
     <a v-else :href="logoLink" >
@@ -81,37 +81,41 @@ export default {
   position: absolute;
   padding: 0;
   animation: appear 1s;
+  width: 200px;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
   margin: auto;
-  width: 150px;
   height: auto;
   display: block;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  
 
   @include tablet {
-    width: 200px;
+    width: 300px;
     left: unset;
     right: unset;
   }
 
+  &__image {
+    display: block;
+    img {
+      position: absolute;
+      height: 100%;
+      max-height: 100%;
+      top: 0;
+    }
+  }
+
   a {
-    vertical-align: top;
-    display: inline-block;
     text-align: left;
     text-decoration: none;
     width: 100%;
     color: var(--text-light);
-    display: inline-block;
     font-size: 35px;
-    line-height: 100px;
-    height: 100px;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   span {
@@ -121,12 +125,18 @@ export default {
   &--right {
     @include tablet {
       right: 0;
+      img {
+        right: 0;
+      }
     }
   }
 
   &--left {
     @include tablet {
       left: 0;
+      img {
+        left: 0;
+      }
     }    
   }
   
@@ -135,6 +145,12 @@ export default {
     right: 0;
     margin-right: auto!important;
     margin-left: auto!important;
+    img {
+      left: 0;
+      right: 0;
+      margin-right: auto!important;
+      margin-left: auto!important;
+    }
   }
 }
 </style>
