@@ -6,7 +6,7 @@
        </template>      
       </slp-menu>
       <slp-hero v-bind="hero">
-        <slp-hero-layer v-bind="heroLayer">
+        <slp-hero-layer v-bind="heroLayerText">
           <slp-button v-bind="heroButton" class="hero__layer-item"></slp-button>
         </slp-hero-layer>
       </slp-hero>
@@ -23,7 +23,7 @@ export default {
       menu: this.$store.state.activeTheme.menu || {},
       logo: this.$store.state.activeTheme.logo || {},
       hero: this.$store.state.activeTheme.hero || {},
-      heroLayer: this.$store.state.activeTheme.heroLayer || {},
+      heroLayerText: this.$store.state.activeTheme.heroLayerText || {},
       heroButton: this.$store.state.activeTheme.heroButton || {},
     }
   },
