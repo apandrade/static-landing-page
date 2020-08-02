@@ -18,14 +18,6 @@ export default {
             type: String,
             default: 'Your subtitle goes here'
         },
-        // link: {
-        //     type: String,
-        //     default: 'https://www.google.com'
-        // },
-        // linkText: {
-        //     type: String,
-        //     default: 'Click Here'
-        // },
         hideLayerText: {
             type: Boolean,
             default: false,
@@ -56,8 +48,6 @@ export default {
        return {
             heroLayerTitle: this.title,
             heroLayerSubtitle: this.subtitle,
-            // heroLayerLink: this.link,
-            // heroLayerLinkText: this.linkText,
             heroLayerTextAlign: this.layerTextAlign,
             heroLayerTextValign: this.layerTextValign,
             heroLayerAlign: this.layerAlign,
