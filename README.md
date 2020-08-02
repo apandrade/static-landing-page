@@ -12,17 +12,12 @@ $ yarn dev
 # build for production and launch server
 $ yarn build
 $ yarn start
-
-# generate static project
-$ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 TODO
-- Set hero padding according to menu type chosen
-- Add hero height prop
-- Fix nav and logo mobile to override inline styles
-- Add video layer on hero
-- Add content 
-- add footer
+- Add simple grid
+- Add card component
+- Add text component 
+- add add list component
