@@ -6,10 +6,13 @@
        </template>      
       </slp-menu>
       <slp-hero v-bind="hero">
-        <slp-hero-layer v-bind="heroLayerCta">
-          <slp-cta v-bind="cta">
+        <slp-hero-layer v-if="!heroLayerCta.hide" v-bind="heroLayerCta">
+          <slp-cta slot="cta" v-bind="cta">
             <slp-button v-bind="ctaButton" class="cta__item"></slp-button>
           </slp-cta>
+        </slp-hero-layer>
+        <slp-hero-layer v-if="!heroLayerVideo.hide" v-bind="heroLayerVideo" class="hero__layer--no-padding hero__layer--content-valign-top-mobile">
+          <slp-youtube-video slot="video" v-bind="youtobeVideo"/>
         </slp-hero-layer>
       </slp-hero>
       <slp-content></slp-content>
@@ -28,6 +31,8 @@ export default {
       heroLayerCta: this.$store.state.activeTheme.heroLayerCta || {},
       cta: this.$store.state.activeTheme.cta || {},
       ctaButton: this.$store.state.activeTheme.ctaButton || {},
+      heroLayerVideo: this.$store.state.activeTheme.heroLayerVideo || {},
+      youtobeVideo: this.$store.state.activeTheme.youtubeVideo || {},
     }
   },
   head() {

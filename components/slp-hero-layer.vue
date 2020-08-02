@@ -1,6 +1,9 @@
 <template>
-    <div class="hero__layer" :style="style" :class="'hero__layer--' + heroLayerAlign + ' hero__layer--content-valign-' + heroContentValign">
-        <slot></slot>    
+    <div class="hero__layer" :style="style" :class="'hero__layer--' + heroLayerAlign +
+    ' hero__layer--content-valign-' + heroLayerContentValign +
+    ' hero__layer--content-align-' + heroLayerContentAlign">
+        <slot name="cta"></slot>
+        <slot name="video"></slot>   
     </div>
 </template>
 <script>
@@ -13,22 +16,37 @@ export default {
         bgColor: {
             type: String,
         },
+        contentAlign: {
+            type: String,
+            default: 'center',
+        },
         contentValign: {
             type: String,
             default: 'center',
+        },
+        height: {
+            type: String,
+        },
+        width: {
+            type: String,
         }
     },
     data() {
        return {
             heroLayerAlign: this.position,
             heroLayerBgColor: this.bgColor,
-            heroContentValign: this.contentValign,
+            heroLayerContentAlign: this.contentAlign,
+            heroLayerContentValign: this.contentValign,
+            heroLayerHeight: this.height,
+            heroLayerWidth: this.width,
        }
     },
     computed: {
         style() {           
             return  {
-                ...this.heroLayerBgColor && {background: this.heroLayerBgColor},                
+                ...this.heroLayerBgColor && { background: this.heroLayerBgColor },
+                ...this.heroLayerHeight && { height: this.heroLayerHeight }, 
+                ...this.heroLayerWidth && { width: this.heroLayerWidth },         
             };
         },
     }
@@ -49,17 +67,31 @@ export default {
         padding: 10px 0;
         background-size: cover;
         color: var(--text-dark);
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
 
         @include desktop {
            width: 50%; 
         }
 
         &--left {
-            left: 0;
+            @include tablet {
+                left: 0;
+                right: unset;
+                margin-right: unset;
+                margin-left: unset;
+            }
         }
 
         &--right {
-            right: 0;
+            @include tablet {
+                right: 0;
+                left: unset;
+                margin-right: unset;
+                margin-left: unset;
+            }
         }
 
         &--center {
@@ -79,7 +111,23 @@ export default {
 
         &--content-valign-top {
             justify-content: flex-start;
-        }      
+        }
+
+        &--content-align-center {
+            align-items: center;
+        }
+
+        &--content-align-bottom {
+            align-items: flex-end;
+        }
+
+        &--content-align-top {
+            align-items: flex-start;
+        } 
+
+        &--no-padding {
+            padding: 0;
+        }
     }    
 }
 </style>

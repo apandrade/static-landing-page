@@ -39,7 +39,11 @@ export default  {
     heroLayerCta: {
       position: 'left',
       bgColor: 'rgba(255, 255, 255, 0.5)',
-      contentValign: undefined,            
+      contentAlign: undefined,
+      contentValign: undefined,
+      hide: false,
+      height: undefined,
+      width: undefined,          
     },
     cta: {
       title: 'Lorem Ipsum dolor sit amet',
@@ -47,11 +51,26 @@ export default  {
       textAlign: 'center',
       textValign: 'center',
       fontFamily: 'Advent Pro',
-    },
+    },    
     ctaButton: {
         type: 'danger',
         disabled: undefined,
         url: 'http://www.google.com',
         text: 'Click Here',
+    },
+    heroLayerVideo: {
+      hide: false,
+      position: 'right',
+      bgColor: undefined,
+      contentValign: undefined,
+      contentAlign: undefined,
+      contentValign: undefined,
+      height: undefined,
+      width: undefined,          
+    },
+    youtubeVideo: {
+      width: "250",
+      height: "150",
+      url: 'https://www.youtube.com/embed/tgbNymZ7vqY',
     }
 }
