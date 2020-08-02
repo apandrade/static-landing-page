@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!heroLayerTextHidden" class="hero__layer" :style="style" :class="'hero__layer--text-valign-'+ heroLayerTextValign +
+    <div class="hero__layer" :style="style" :class="'hero__layer--text-valign-'+ heroLayerTextValign +
                                                                                     ' hero__layer--' + heroLayerAlign + 
                                                                                     ' hero__layer--text-' + heroLayerTextAlign">
         <h1 class="hero__layer-item">{{heroLayerTitle}}</h1>
