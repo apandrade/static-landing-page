@@ -54,6 +54,7 @@ export default {
   */
   modules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/device'
   ],
   /*
   ** Build configuration

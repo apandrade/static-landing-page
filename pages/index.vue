@@ -11,7 +11,7 @@
             <slp-button v-bind="ctaButton" class="cta__item"></slp-button>
           </slp-cta>
         </slp-hero-layer>
-        <slp-hero-layer v-if="!heroLayerVideo.hide" v-bind="heroLayerVideo" class="hero__layer--no-padding hero__layer--content-valign-top-mobile">
+        <slp-hero-layer v-if="!heroLayerVideo.hide && $device.isDesktop" v-bind="heroLayerVideo" class="hero__layer--no-padding hero__layer--content-valign-top-mobile">
           <slp-youtube-video slot="video" v-bind="youtobeVideo"/>
         </slp-hero-layer>
       </slp-hero>

@@ -10,6 +10,7 @@
     "serve": "nuxt build && nuxt export && nuxt serve"
   },
   "dependencies": {
+    "@nuxtjs/device": "^1.2.7",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
